@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password:
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: maino_connect_development
+
+test:
+  <<: *default
+  database: maino_connect_test
+
+production:
+  <<: *default
+  database: maino_connect_production
+  username: maino_connect
+  password: <%= ENV["MAINO_CONNECT_DATABASE_PASSWORD"] %>
+
