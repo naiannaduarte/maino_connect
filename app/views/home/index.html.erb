@@ -1,5 +1,11 @@
 <div class="container text-center my-5">
   <h1>Bem-vindo ao Mainô Connect!</h1>
   <button class="btn btn-primary mt-3">Testar Bootstrap</button>
+
+<% if user_signed_in? %>
+  Olá, <%= current_user.name %>!
+  <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+<% end %>
+
 </div>
 
