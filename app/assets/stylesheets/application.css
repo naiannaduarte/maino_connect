@@ -7,9 +7,13 @@
 :root {
     --cor-fundo: #F6D9D6;
     --cor-texto: #333333;
+    --cor-botao: #BA68C8;
 
-    --fonte-principal:'Inter', sans-serif;
-
+    --fonte-principal: 'Inter', sans-serif;
+    --font-xl: 3.1rem;
+    --font-large: 2.3rem;
+    --font-medium: 1.2rem;
+    --font-small: 1.1rem;
 }
 
 body {
@@ -22,8 +26,37 @@ header {
     margin-top: 30px;
 
 }
-.logo {
-    font-size: 2rem; 
+
+.logo_maino {
+    margin-left: 3rem;
+}
+
+.header__item {
+    font-family: var(--fonte-principal);
     font-weight: bold;
+    font-size: var(--font-medium);
+    margin-top: 1rem;
+}
+
+.header__button {
+    margin-right: 3rem;
+}
+
+.header__link {
+    color: var(--cor-texto);
     text-decoration: none;
+    padding: 20px;
+}
+
+.header__button.nav-link.btn {
+    border: 2px solid var(--cor-botao);
+    font-weight: bolder;
+    border-radius: 8px;
+    padding: 10px 40px;
+    font-size: var(--font-small);
+    transition: all 0.3s ease;
+}
+
+.header__button.nav-link.btn:hover {
+    background-color: rgba(255, 105, 180, 0.2);
 }
