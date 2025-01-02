@@ -6,6 +6,7 @@
       <div class="list-group-item">
         <h5><%= post.title %></h5>
         <p><%= post.content %></p>
+        <p><small>Postado por: <%= post.user.name %></small></p>
         <small><%= post.created_at.strftime("%b %d, %Y") %></small>
       </div>
     <% end %>
