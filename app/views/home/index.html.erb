@@ -1,11 +1,12 @@
-<div class="container text-center my-5">
-  <h1>Bem-vindo ao Mainô Connect!</h1>
-  <button class="btn btn-primary mt-3">Testar Bootstrap</button>
-
 <% if user_signed_in? %>
-  Olá, <%= current_user.name %>!
-  <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+Olá, <%= current_user.name %>!
+<%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
 <% end %>
 
+<div>
+    <h1>Mainô Connect: Um Espaço para Compartilhar e Inspirar.</h1>
+    <h4> Onde Histórias, Ideias e Conexões Ganham Vida e Significado.</h4>
 </div>
-
+<div>
+    <%= image_tag "banner2.png", class: "d-block w-100", alt: "Banner" %>
+</div>
