@@ -39,7 +39,7 @@
                     <%= link_to "HOME", root_path, class: "header__link" %>
                 </li>
                 <li class="header__item">
-                    <%= link_to "POSTS", posts_path, class: "header__link" %>  
+                    <%= link_to "POSTS", posts_path, class: "header__link" %>
                 </li>
                 <li class="header__item">
                     <%= link_to "CADASTRO", new_user_registration_path, class: "header__link" %>
@@ -47,8 +47,13 @@
             </ul>
         </div>
         <div>
+            <% if user_signed_in? %>
+            <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-dange header__button" %>
+            <% else %>
             <button class="nav-link btn header__button" onclick="window.location.href='<%= new_user_session_path %>';">Login</button>
+            <% end %>
         </div>
+
     </header>
 
     <%= yield %>

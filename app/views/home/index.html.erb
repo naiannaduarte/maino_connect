@@ -1,8 +1,3 @@
-<% if user_signed_in? %>
-Olá, <%= current_user.name %>!
-<%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-<% end %>
-
 <div class="d-flex flex-row align-items-center landing">
     <div class= "landing__texto w-50">
         <h1>Mainô Connect: Um Espaço para Compartilhar e Inspirar.</h1>
