@@ -8,14 +8,22 @@
     --cor-fundo: #F6D9D6;
     --cor-texto: #333333;
 
+    --fonte-principal:'Inter', sans-serif;
+
 }
 
 body {
     background-color: var(--cor-fundo) !important;
     color: var(--cor-texto);
+    font-family: var(--fonte-principal);
 }
 
 header {
     margin-top: 30px;
 
+}
+.logo {
+    font-size: 2rem; 
+    font-weight: bold;
+    text-decoration: none;
 }
