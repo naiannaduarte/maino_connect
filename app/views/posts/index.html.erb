@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h2>Lista de Posts</h2>
+
+  <div class="list-group">
+    <% @posts.each do |post| %>
+      <div class="list-group-item">
+        <h5><%= post.title %></h5>
+        <p><%= post.content %></p>
+        <small><%= post.created_at.strftime("%b %d, %Y") %></small>
+      </div>
+    <% end %>
+  </div>
+</div>
