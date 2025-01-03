@@ -11,4 +11,10 @@
       </div>
     <% end %>
   </div>
+  <% @posts.each do |post| %>
+  <div>
+    <%= link_to post.title, post_path(post) %> <!-- Aqui você garante que o link irá para o post correto -->
+  </div>
+<% end %>
+
 </div>

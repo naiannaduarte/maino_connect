@@ -1,0 +1,19 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<h3>Comentários</h3>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+
+<h4>Adicionar um comentário:</h4>
+<%= form_with model: [ @post, @comment ], local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :content, "Comentário" %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+  <%= form.submit "Comentar", class: "btn btn-primary" %>
+<% end %>
+
