@@ -41,9 +41,15 @@
                 <li class="header__item">
                     <%= link_to "POSTS", posts_path, class: "header__link" %>
                 </li>
+                <% if user_signed_in? %>
+                <li class="header__item">
+                    <%= link_to "MEU PERFIL", edit_user_registration_path, class: "header__link" %>
+                </li>
+                <% else %>
                 <li class="header__item">
                     <%= link_to "CADASTRO", new_user_registration_path, class: "header__link" %>
                 </li>
+                <% end %>
             </ul>
         </div>
         <div>
