@@ -1,6 +1,11 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import Rails from "@rails/ujs";
-Rails.start();
-import "@hotwired/turbo-rails"
-import "controllers"
+function toggleComments(postId) {
+    const commentsContainer = document.getElementById(`comments_for_${postId}`);
+    
 
+    if (commentsContainer.style.display === "none" || commentsContainer.style.display === "") {
+      commentsContainer.style.display = "block"; 
+    } else {
+      commentsContainer.style.display = "none";
+    }
+  }
+  

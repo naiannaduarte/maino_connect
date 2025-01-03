@@ -1,20 +1,21 @@
-<div class="container mt-4">
-  <h2>Lista de Posts</h2>
+<% @posts.each do |post| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text"><%= post.content %></p>
 
-  <div class="list-group">
-    <% @posts.each do |post| %>
-      <div class="list-group-item">
-        <h5><%= post.title %></h5>
-        <p><%= post.content %></p>
-        <p><small>Postado por: <%= post.user.name %></small></p>
-        <small><%= post.created_at.strftime("%b %d, %Y") %></small>
+      <!-- Botão para exibir/ocultar comentários -->
+      <button onclick="toggleComments(<%= post.id %>)" class="btn btn-info">Exibir Comentários</button>
+
+      <!-- Div com os comentários, inicialmente oculta -->
+      <div id="comments_for_<%= post.id %>" style="display: none;">
+        <% post.comments.each do |comment| %>
+          <div class="comment">
+            <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+            <p><small><%= comment.created_at.strftime("%d/%m/%Y %H:%M") %></small></p>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <% @posts.each do |post| %>
-  <div>
-    <%= link_to post.title, post_path(post) %> <!-- Aqui você garante que o link irá para o post correto -->
+    </div>
   </div>
 <% end %>
-
-</div>

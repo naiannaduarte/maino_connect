@@ -71,3 +71,9 @@ header {
     padding: 3rem;
     
 }
+.comment-list {
+    max-height: 200px; 
+    overflow-y: auto;
+    padding-right: 10px; 
+  }
+  

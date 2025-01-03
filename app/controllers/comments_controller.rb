@@ -7,9 +7,14 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to post_path(@post), notice: "Comentário criado com sucesso!"
+      respond_to do |format|
+        format.html { redirect_to posts_path, notice: "Comentário adicionado com sucesso!" }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.append("comments_for_#{@post.id}", partial: "comments/comment", locals: { comment: @comment })
+        end
+      end
     else
-      render "posts/show", alert: "Erro ao criar comentário."
+      redirect_to posts_path, alert: "Erro ao adicionar o comentário"
     end
   end
 
