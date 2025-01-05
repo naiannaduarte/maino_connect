@@ -13,7 +13,7 @@
     --font-large: 2.3rem;
     --font-medium: 1.2rem;
     --font-small: 1.1rem;
-    --font-xsmall:1rem;
+    --font-xsmall: 1rem;
 
     --spacing-xsmall: 8px;
     --spacing-medium: 16px;
@@ -60,22 +60,28 @@ header {
     font-size: var(--font-small);
     transition: all 0.3s ease;
 }
+
 .landing {
     margin-top: 3rem
 }
-.landing__texto, .landing__img {
+
+.landing__texto,
+.landing__img {
     padding: 3rem;
-    
+
 }
+
 .comment-list {
-    max-height: 200px; 
+    max-height: 200px;
     overflow-y: auto;
-    padding-right: 10px; 
+    padding-right: 10px;
 }
+
 .card__login {
     border-radius: 30px !important;
     margin-top: 3rem;
 }
+
 .button__login {
     background-color: var(--cor-botao);
     color: var(--cor-fundo);
@@ -84,8 +90,15 @@ header {
     padding: 8px 30px;
     font-size: var(--font-xsmall);
 }
+
 .card_post {
-    border-radius: 10px !important;
- 
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-  
+
+.area__texto {
+    width: 100%;
+    min-height: 10rem !important;
+}

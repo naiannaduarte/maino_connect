@@ -1,30 +1,34 @@
-<h1>Criar Novo Post</h1>
+<div class="login-container d-flex justify-content-center align-items-center mt-4">
+    <div class="card__login card p-4 w-50 mt-5">
+        <h1 class="text-center">Novo Post</h1>
+        <p class="text-center"> Compartilhe aqui suas Idéias! </p>
 
-<%= form_with model: @post, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
+        <%= form_with model: @post, local: true do |f| %>
+        <div class="form-group mb-3">
+            <%= f.label :título, class: "form-label" %>
+            <%= f.text_field :title, class: "form-control" %>
+        </div>
 
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control" %>
-  </div>
+        <div class="form-group mb-3">
+            <%= f.label :Conteúdo, class: "form-label" %>
+            <%= f.text_area :content, class: "form-control area__texto" %>
+        </div>
 
-  <div class="form-group">
-    <%= f.submit "Criar Post", class: "btn btn-primary" %>
-  </div>
-<% end %>
+        <div class="form-group d-grid">
+            <%= f.submit "Criar Post", class: "button__login mt-3" %>
+        </div>
+        <% end %>
 
+        <%= link_to 'Voltar', posts_path, class: 'btn btn-secondary mt-3' %>
 
-<%= link_to 'Voltar', posts_path, class: 'btn btn-secondary' %>
-
-<% if @post.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+        <% if @post.errors.any? %>
+        <div class="alert alert-danger mt-3">
+            <ul>
+                <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+</div>

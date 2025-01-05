@@ -1,0 +1,38 @@
+
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Meus Posts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Sair</a>
+  </li>
+</ul>
+<h1>Meus Posts</h1>
+
+
+<%= paginate @paginator %>
+
+<% @posts.each do |post| %>
+<div class="post">
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+
+    <div class="actions">
+        <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
+        <%= link_to 'Excluir', delete_post_path(post), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+
+    </div>
+
+    <div class="comments">
+        <% post.comments.each do |comment| %>
+        <p><%= comment.content %></p>
+        <% end %>
+    </div>
+</div>
+<% end %>
+
+<%= paginate @paginator %>

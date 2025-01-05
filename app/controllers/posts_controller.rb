@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create ]
+  before_action :authenticate_user!, only: [ :new, :create, :user_posts, :delete, :edit, :update ]
 
   def index
     @posts = Post.includes(:comments).order(created_at: :desc).page(params[:page]).per(3)
+    @paginator = @posts
+  end
+
+  def user_posts
+    @posts = current_user.posts.includes(:comments).order(created_at: :desc).page(params[:page]).per(3)
     @paginator = @posts
   end
 
@@ -43,7 +48,8 @@ class PostsController < ApplicationController
     redirect_to posts_path, alert: "Post não encontrado."
   end
 
-  def excluir
+  def delete
+    binding.pry
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path, notice: "Post excluído com sucesso!"
