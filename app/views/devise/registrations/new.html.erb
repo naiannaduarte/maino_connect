@@ -1,11 +1,8 @@
-<div class="d-flex flex-column justify-content-center align-items-center mt-5">
-    <h2 class="text-center mb-4">É novo no Mainô Connect?</h2>
-    <h4 class="text-center">Cadastre-se AQUI.</h2>
-</div>
+<div class="login-container d-flex flex-row justify-content-center align-items-center mt-4">
 
-
-<div class="d-flex justify-content-center align-items-center mt-4">
-    <div class="card p-4 w-25 bg-transparent border border-dark">
+    <div class="card__login card p-4 w-25 bg-white">
+        <h2 class="text-center mb-3">Cadastre-se AQUI.</h2>
+        <p class="text-center">É novo no Mainô Connect?</p>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -32,8 +29,8 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
         </div>
 
-        <div class="mb-3">
-            <%= f.submit "Cadastrar", class: "btn btn-primary btn-block" %>
+        <div class="d-grid">
+            <%= f.submit "Cadastrar", class: "button__login" %>
         </div>
         <% end %>
 

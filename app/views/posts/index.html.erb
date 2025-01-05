@@ -1,18 +1,18 @@
-<div class="d-flex flex-row justify-content-center mt-3">
+<div class="text-center">
     <h1 class="mt-5">Últimos Posts</h1>
     <%= link_to 'Criar Novo Post', new_post_path, class: 'btn btn-success' %>
 </div>
 
-
-<% @posts.each do |post| %>
-<div class="d-flex flex-row card m-5 bg-transparent">
-    <div class="card-body">
-        <h5 class="card-title"><%= link_to post.title, post_path(post) %></h5>
-        <p class="card-text"><%= post.content.truncate(100) %></p>
-        <p><small>Postado por: <%= post.user.name %> em <%= post.created_at.strftime("%d/%m/%Y %H:%M")%></small></p>
-    </div>
-    <div cclass="d-flex justify-content-center">
-        <%= link_to 'Ler mais', post_path(post), class: 'btn btn-primary' %>
-    </div>
+<div class="row m-4">
+    <% @posts.each do |post| %>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body card_post shadow-lg">
+                    <h5 class="card-title card__titulo"><%= link_to post.title, post_path(post) %></h5>
+                    <p class="card-text card_content"><%= post.content.truncate(100) %></p>
+                    <p><small>Postado por: <%= post.user.name %> em <%= post.created_at.strftime("%d/%m/%Y %H:%M")%></small></p>                </div>
+            </div>
+        </div>
+    <% end %>
 </div>
-<% end %>
+

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get "home/index"
   root "home#index"
   get "up" => "rails/health#show", as: :rails_health_check
-  resources :posts, only: [ :index, :new, :create, :show ] do
+  resources :posts do
     resources :comments, only: [ :create ]
+    member do
+      delete :excluir
+    end
   end
 end

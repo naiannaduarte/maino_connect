@@ -2,19 +2,18 @@
  *= require_tree .
  *= require_self
 */
-
-
 :root {
     --cor-fundo: #e0e1dd;
     --cor-fundo-secundaria: #d6ccc2;
     --cor-texto: #333333;
-    --cor-botao: #BA68C8;
+    --cor-botao: #003049;
 
     --fonte-principal: 'Inter', sans-serif;
     --font-xl: 3.1rem;
     --font-large: 2.3rem;
     --font-medium: 1.2rem;
     --font-small: 1.1rem;
+    --font-xsmall:1rem;
 
     --spacing-xsmall: 8px;
     --spacing-medium: 16px;
@@ -57,13 +56,9 @@ header {
     border: 2px solid var(--cor-botao);
     font-weight: bold;
     border-radius: 8px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     font-size: var(--font-small);
     transition: all 0.3s ease;
-}
-
-.header__button.nav-link.btn:hover {
-    background-color: rgba(255, 105, 180, 0.2);
 }
 .landing {
     margin-top: 3rem
@@ -76,5 +71,21 @@ header {
     max-height: 200px; 
     overflow-y: auto;
     padding-right: 10px; 
-  }
+}
+.card__login {
+    border-radius: 30px !important;
+    margin-top: 3rem;
+}
+.button__login {
+    background-color: var(--cor-botao);
+    color: var(--cor-fundo);
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 30px;
+    font-size: var(--font-xsmall);
+}
+.card_post {
+    border-radius: 10px !important;
+ 
+}
   
