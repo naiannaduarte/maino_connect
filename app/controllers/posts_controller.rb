@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
-    @posts = Post.includes(:comments).order(created_at: :desc)
+    @posts = Post.includes(:comments).order(created_at: :desc).page(params[:page]).per(3)
+    @paginator = @posts
   end
 
   def show
