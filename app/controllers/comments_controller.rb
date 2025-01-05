@@ -2,18 +2,16 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    @comment.user = current_user
+
+    @comment.user = current_user if user_signed_in?
 
     if @comment.save
-      respond_to do |format|
-        format.html { redirect_to posts_path, notice: "Comentário adicionado com sucesso!" }
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.append("comments_for_#{@post.id}", partial: "comments/comment", locals: { comment: @comment })
-        end
-      end
+      redirect_to post_path(@post), notice: "Comentário publicado com sucesso!"
     else
-      redirect_to posts_path, alert: "Erro ao adicionar o comentário"
+      redirect_to post_path(@post), alert: "Erro ao publicar comentário: " + @comment.errors.full_messages.to_sentence
     end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to posts_path, alert: "Post não encontrado."
   end
 
   private
