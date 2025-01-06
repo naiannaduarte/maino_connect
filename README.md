@@ -4,22 +4,10 @@
 
 **Mainô Connect** é uma aplicação web desenvolvida para facilitar o gerenciamento de posts e interações entre usuários. Este projeto utiliza Ruby on Rails como framework principal e foi projetado para oferecer uma experiência intuitiva.
 
-## Índice
+## Objetivo do Projeto
 
-1. **Descrição**
-2. **Objetivo**
-3. **Funcionalidades**
-4. **Tecnologias**
-5. **Pré-requisitos**
-6. **Instalação**
-7. **Configuração do Ambiente**
-8. **Como Executar o Projeto**
-9. **Licença**
-10. **Contato**
-
-## Descrição
-
-Mainô Connect é uma plataforma que permite a criação, visualização, edição e exclusão de posts. Os usuários podem interagir através de comentários em seus próprios posts ou nos posts de outros usuários. A plataforma é desenvolvida para ser fácil de usar e responsiva, garantindo uma boa experiência em diferentes dispositivos.
+Este projeto foi desenvolvido como parte de um processo seletivo para avaliar conhecimentos em Ruby on Rails, Banco de Dados Relacional (PostgreSQL), e boas práticas de desenvolvimento web.
+O foco principal foi na implementação de uma aplicação web completa com áreas deslogadas e logadas, atendendo a todos os requisitos solicitados.
 
 ## Funcionalidades
 
@@ -38,39 +26,30 @@ Mainô Connect é uma plataforma que permite a criação, visualização, ediç�
 - Editar o perfil do usuário.
 - Alterar a senha do usuário logado.
 
-## Tecnologias
+## Stack Tecnologias
 
-- Ruby on Rails
-- PostgreSQL
-- HTML, CSS e JS
-- Bootstrap
+- Linguagem: Ruby (v. 3.2.6)
+- Framework: Ruby on Rails (v. 8.0.1 )
+- Banco de Dados: PostgreSQL (v. 14.15)
+- Frontend: HTML, CSS, JS com Bootstrap
 
 ## Hospedagem
 
 - O projeto está hospedado no Render 
 link: 
 
+## O que poderia ser Melhorado
 
+- Testes Automatizados: Não consegui implementar testes automatizados devido ao tempo limitado.
+- Internacionalização: Inicializei a pesquisa sobre a implementação, mas não avancei.
+- Tags e Filtros: A adição de tags aos posts foi planejada, mas não concluída por questões de tempo.
+- Upload de Arquivos: A integração com upload de arquivos (TXT) foi uma funcionalidade desejada, mas não foi implementada.
+- Delete de Posts: A funcionalidade de excluir posts não foi implementada.
 
+## Sobre mim
 
+Antes deste projeto, nunca havia trabalhado com Ruby on Rails. Desenvolver o Mainô Connect foi uma experiência extremamente satisfatória e foi importante para minha autoconfiança, mesmo entregando o projeto com algumas limitações, nunca pensei que conseguiria, em pouco tempo, chegar no ponto que cheguei. Continem fazendo esse tipo de seleção.
 
+## Contato
 
-
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Caso tenha dúvidas ou sugestões, entre em contato através do e-mail: naianna.sdc@gmail.com
