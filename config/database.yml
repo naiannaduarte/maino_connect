@@ -24,12 +24,4 @@ production:
   host: <%= ENV["MAINO_CONNECT_DATABASE_HOST"] %>
   port: <%= ENV["MAINO_CONNECT_DATABASE_PORT"] || 5432 %>
 
-  cable:
-    adapter: postgresql
-    encoding: unicode
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    username: <%= ENV["MAINO_CONNECT_DATABASE_USER"] %>
-    password: <%= ENV["MAINO_CONNECT_DATABASE_PASSWORD"] %>
-    host: <%= ENV["MAINO_CONNECT_DATABASE_HOST"] %>
-    port: <%= ENV["MAINO_CONNECT_DATABASE_PORT"] || 5432 %>
 
