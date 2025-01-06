@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create, :user_posts, :delete, :edit, :update ]
+  before_action :authenticate_user!, only: [ :new, :create, :user_posts, :destroy, :delete, :edit, :update ]
 
   def index
     @posts = Post.includes(:comments).order(created_at: :desc).page(params[:page]).per(3)
@@ -48,13 +48,15 @@ class PostsController < ApplicationController
     redirect_to posts_path, alert: "Post não encontrado."
   end
 
-  def delete
+  def destroy
     binding.pry
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path, notice: "Post excluído com sucesso!"
   rescue ActiveRecord::RecordNotFound
-    redirect_to posts_path, alert: "Post não encontrado."
+    redirect_to posts_path, alert: "Post não encontrado.", status: :see_other
+  end
+  def delete
   end
 
   private

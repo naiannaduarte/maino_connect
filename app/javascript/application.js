@@ -1,3 +1,6 @@
+import Rails from "@rails/ujs";
+Rails.start();
+
 function toggleComments(postId) {
     const commentsContainer = document.getElementById(`comments_for_${postId}`);
     

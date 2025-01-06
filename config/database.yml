@@ -16,8 +16,11 @@ test:
   database: maino_connect_test
 
 production:
+  production:
   <<: *default
   database: maino_connect_production
-  username: maino_connect
+  username: <%= ENV["MAINO_CONNECT_DATABASE_USER"] %>
   password: <%= ENV["MAINO_CONNECT_DATABASE_PASSWORD"] %>
+  host: <%= ENV["MAINO_CONNECT_DATABASE_HOST"] %>
+  port: <%= ENV["MAINO_CONNECT_DATABASE_PORT"] || 5432 %>
 
