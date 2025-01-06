@@ -1,14 +1,15 @@
-<ul class="nav justify-content-center m-4">
-    <li class="p-3">
-        <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'btn btn-secondary' %>
+<nav id="navbar-example2" class="navbar bg-transparent px-3 m-5">
+  <h2 class="text-center">Meus Post</h2>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="<%= edit_user_registration_path %>">Editar Perfil</a>
     </li>
-    <li class="p-3">
-        <%= link_to 'Criar Novo Post', new_post_path, class: 'btn btn-secondary' %>
+    <li class="nav-item">
+     <a class="nav-link text-dark"href="<%= new_post_path %>">Criar Post</a>
     </li>
-</ul>
-
-<h1 class="text-center m-4">Meus Posts</h1>
-
+    </li>
+  </ul>
+</nav>
 <div class="d-flex justify-content-center">
     <div class="posts-container w-75">
         <% if @posts.any? %>
@@ -19,8 +20,7 @@
                 <p class="card-text"><%= post.content %></p>
 
                 <div class="actions">
-                    <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
-
+                    <%= link_to 'Editar', edit_post_path(post), class: 'button__login' %>
                 </div>
                 <hr class="my-4">
                 <h4>Comentários:</h4>
