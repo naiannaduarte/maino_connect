@@ -20,6 +20,8 @@ gem "jbuilder"
 
 gem "bcrypt", "~> 3.1.7"
 gem "devise"
+gem 'sendgrid-ruby', '~> 6.0'
+
 
 
 
