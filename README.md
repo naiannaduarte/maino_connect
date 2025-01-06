@@ -36,7 +36,7 @@ O foco principal foi na implementação de uma aplicação web completa com áre
 ## Hospedagem
 
 - O projeto está hospedado no Render 
-link: https://maino-connect-n82x.onrender.com/
+- LINK DA APLICAÇÃO HOSPEDADA: https://maino-connect-n82x.onrender.com/
 
 ## O que poderia ser Melhorado
 
@@ -45,6 +45,7 @@ link: https://maino-connect-n82x.onrender.com/
 - Tags e Filtros: A adição de tags aos posts foi planejada, mas não concluída por questões de tempo.
 - Upload de Arquivos: A integração com upload de arquivos (TXT) foi uma funcionalidade desejada, mas não foi implementada.
 - Delete de Posts: A funcionalidade de excluir posts não foi implementada.
+- Envio de recuperação de senha: como o render bloqueia as portas dos servidores smtp tive dificuldade de mudar pro sendgrid depois do deploy.
 
 ## Sobre mim
 
