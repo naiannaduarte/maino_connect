@@ -1,6 +1,15 @@
 development:
-  adapter: redis
-  url: redis://localhost:6379/0
+  adapter: postgresql
+  database: cable
+  username: <%= ENV["MAINO_CONNECT_DATABASE_USER"] %>
+  password: <%= ENV["MAINO_CONNECT_DATABASE_PASSWORD"] %>
+  host: <%= ENV["MAINO_CONNECT_DATABASE_HOST"] %>
+  port: <%= ENV["MAINO_CONNECT_DATABASE_PORT"] || 5432 %>
 
-test:
-  adapter: null
+production:
+  adapter: postgresql
+  database: cable
+  username: <%= ENV["MAINO_CONNECT_DATABASE_USER"] %>
+  password: <%= ENV["MAINO_CONNECT_DATABASE_PASSWORD"] %>
+  host: <%= ENV["MAINO_CONNECT_DATABASE_HOST"] %>
+  port: <%= ENV["MAINO_CONNECT_DATABASE_PORT"] || 5432 %>
