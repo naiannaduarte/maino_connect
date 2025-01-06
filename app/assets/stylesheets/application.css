@@ -4,7 +4,7 @@
 */
 :root {
     --cor-fundo: #e0e1dd;
-    --cor-fundo-secundaria: #d6ccc2;
+    --cor-fundo-secundaria: #ffff;
     --cor-texto: #333333;
     --cor-botao: #003049;
 
@@ -88,6 +88,7 @@ header {
     font-weight: bold;
     border-radius: 8px;
     padding: 8px 30px;
+    text-decoration: none;
     font-size: var(--font-xsmall);
 }
 
@@ -96,6 +97,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
 }
 
 .area__texto {

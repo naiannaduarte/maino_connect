@@ -43,10 +43,7 @@
                 </li>
                 <% if user_signed_in? %>
                 <li class="header__item">
-                    <%= link_to "MEU PERFIL", edit_user_registration_path, class: "header__link" %>
-                </li>
-                <li class="header__item">
-                    <%= link_to "MEUS POSTS", user_posts_posts_path, class: "header__link" %>
+                    <%= link_to "PAINEL DO USUÁRIO", user_posts_posts_path, class: "header__link" %>
                 </li>
                 <% else %>
                 <li class="header__item">
