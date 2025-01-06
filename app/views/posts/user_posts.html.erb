@@ -1,33 +1,40 @@
 <ul class="nav justify-content-center m-4">
-    <li class=" p-3">
+    <li class="p-3">
         <%= link_to 'Editar Perfil', edit_user_registration_path, class: 'btn btn-secondary' %>
     </li>
-    <li class=" p-3">
+    <li class="p-3">
         <%= link_to 'Criar Novo Post', new_post_path, class: 'btn btn-secondary' %>
     </li>
 </ul>
+
 <h1 class="text-center m-4">Meus Posts</h1>
 
 <div class="d-flex justify-content-center">
     <div class="posts-container w-75">
-        <% @posts.each do |post| %>
-        <div class="card mb-4">
-            <div class="card-body">
-                <h2 class="card-title"><%= post.title %></h2>
-                <p class="card-text"><%= post.content %></p>
+        <% if @posts.any? %>
+            <% @posts.each do |post| %>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title"><%= post.title %></h2>
+                    <p class="card-text"><%= post.content %></p>
 
-                <div class="actions">
-                    <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
-                    <%= link_to 'Excluir', delete_post_path(post), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
-                </div>
+                    <div class="actions">
+                        <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
+                        <%= link_to 'Excluir', delete_post_path(post), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+                    </div>
 
-                <div class="comments mt-3">
-                    <% post.comments.each do |comment| %>
-                    <p><%= comment.content %></p>
-                    <% end %>
+                    <div class="comments mt-3">
+                        <% post.comments.each do |comment| %>
+                        <p><%= comment.content %></p>
+                        <% end %>
+                    </div>
                 </div>
             </div>
-        </div>
+            <% end %>
+        <% else %>
+            <div class="alert text-center" role="alert">
+                Você ainda não tem posts.
+            </div>
         <% end %>
     </div>
 </div>
