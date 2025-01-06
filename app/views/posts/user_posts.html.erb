@@ -12,29 +12,30 @@
 <div class="d-flex justify-content-center">
     <div class="posts-container w-75">
         <% if @posts.any? %>
-            <% @posts.each do |post| %>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title"><%= post.title %></h2>
-                    <p class="card-text"><%= post.content %></p>
+        <% @posts.each do |post| %>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title"><%= post.title %></h2>
+                <p class="card-text"><%= post.content %></p>
 
-                    <div class="actions">
-                        <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
-                        <%= link_to 'Excluir', delete_post_path(post), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
-                    </div>
-
-                    <div class="comments mt-3">
-                        <% post.comments.each do |comment| %>
-                        <p><%= comment.content %></p>
-                        <% end %>
-                    </div>
+                <div class="actions">
+                    <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-warning' %>
+                    <%= link_to 'Excluir', delete_post_path(post), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+                </div>
+                <hr class="my-4">
+                <h4>Comentários:</h4>
+                <div class="comments mt-3">
+                    <% post.comments.each do |comment| %>
+                    <p><%= comment.content %></p>
+                    <% end %>
                 </div>
             </div>
-            <% end %>
+        </div>
+        <% end %>
         <% else %>
-            <div class="alert text-center" role="alert">
-                Você ainda não tem posts.
-            </div>
+        <div class="alert text-center" role="alert">
+            Você ainda não tem posts.
+        </div>
         <% end %>
     </div>
 </div>

@@ -1,35 +1,38 @@
-<div class="container mt-5">
-    <div class="post">
-        <h1><%= @post.title %></h1>
-        <p><%= @post.content %></p>
-        <p class="text-muted">Publicado em: <%= @post.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+<div class="container m-5 d-flex justify-content-center">
+    <div class="content-wrapper w-75 mt-4">
+        <div class="post">
+            <h1><%= @post.title %></h1>
+            <p><%= @post.content %></p>
+            <p class="text-muted">Publicado em: <%= @post.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+        </div>
+        <hr class="my-2">
+
+        <h4 class="text-center">Comentários</h4>
+        <% @post.comments.each do |comment| %>
+        <div class="comment mb-3">
+            <p>
+                <strong>
+                    <%= comment.user&.name || "Anônimo" %>
+                </strong> disse:
+            </p>
+            <p><%= comment.content %></p>
+            <p class="text-muted">
+                <small>Publicado em <%= comment.created_at.strftime("%d/%m/%Y %H:%M") %></small>
+            </p>
+        </div>
+        <% end %>
+        <hr class="my-2">
+
+        <h4 class="text-center">Deixe um comentário:</h4>
+        <%= form_with(model: [@post, @comment], local: true) do |f| %>
+        <div class="form-group">
+            <%= f.label :content, "Comentário"%>
+            <%= f.text_area :content, class: "form-control", placeholder: "Digite seu comentário..." %>
+        </div>
+
+        <div class="text-center d-grid">
+            <%= f.submit "Comentar", class: "button__login mt-4" %>
+        </div>
+        <% end %>
     </div>
-
-
-    <h3>Comentários</h3>
-    <% @post.comments.each do |comment| %>
-    <div class="comment mb-3">
-        <p>
-            <strong>
-                <%= comment.user&.name || "Anônimo" %>
-            </strong> disse:
-        </p>
-        <p><%= comment.content %></p>
-        <p class="text-muted">
-            <small>Publicado em <%= comment.created_at.strftime("%d/%m/%Y %H:%M") %></small>
-        </p>
-    </div>
-    <% end %>
-
-
-    <h4>Deixe um comentário:</h4>
-    <%= form_with(model: [@post, @comment], local: true) do |f| %>
-    <div class="form-group">
-        <%= f.label :content, "Comentário" %>
-        <%= f.text_area :content, class: "form-control", placeholder: "Digite seu comentário..." %>
-    </div>
-
-    <%= f.submit "Comentar", class: "btn btn-primary" %>
-    <% end %>
-
 </div>
